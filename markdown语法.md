@@ -28,7 +28,10 @@ H2 content 减号需要超过2个
 >>嵌套引用是这样的,多个">"
 >
 >#引用的H1内容
+>1. 列表项1
+>2. 列表项2
 >引用结束要空一行
+
 
 ###5.强制换行,敲两个空格,然后回车就行,或者是空一行
 我等下要换行  
@@ -93,6 +96,14 @@ H2 content 减号需要超过2个
 	* 子级
 		* 再子集
 
+####6.8列表引用
+* 第一项
+	>引用
+	>引用
+* 第二项
+	>引用
+	>引用
+
 
 ###7.字体
 *斜体*
@@ -119,3 +130,61 @@ _ _     _
 创建一个脚注[^脚注]
 
 [^脚注]:脚注的释义
+
+###11.代码
+####11.1段落中的一个函数或者片段代码用(`)
+一个`echo()`函数
+####11.2代码区块就用一个制表符/四个空格
+	let a=0,b=1;
+	let c=a;
+	a=b;
+	b=c;
+####11.3带有指定或者不指定语言的代码片段```
+```
+let a=0,b=1;
+let c=a;
+a=b;
+b=c;
+```
+```javascript
+let a=0,b=1;
+let c=a;
+a=b;
+b=c;
+```
+
+###12超链接
+####12.1普通的用法是[链接名称](链接地址)或者<链接地址>
+[袋鼠云](https://www.dtstack.com)
+<https://www.dtstack.com>
+
+####12.1高级的用法是用([变量])来代替地址,文档末尾附上变量地址
+例如[袋鼠云][dtstack]
+例如[西瓜][scookie]
+
+[dtstack]:https://www.dtstack.com
+[scookie]:https://github.com/Scookie/code-log/blob/master/README.md
+
+###13.图片
+####13.1开头一个感叹号,接着一个方括号,里面放上图片未请求到的替代文本,接着一个圆括号里面放上图片地址,还可以用引号包住并加上title文字~~我并没有看出title有什么用~~
+![没请求到图片的文字](http://map/abc.png "title文字")
+![袋鼠云](https://www.dtstack.com/wp-content/themes/daishuyun/images/favicon.ico "icon")
+####13.2变量,链接地址放在末尾
+![袋鼠云][dtstackIcon]
+[dtstackIcon]:https://www.dtstack.com/wp-content/themes/daishuyun/images/favicon.ico
+####13.3如果要设置宽高那就用<img/>
+<img alt="袋鼠云" src="https://www.dtstack.com/wp-content/themes/daishuyun/images/favicon.ico" width="5%"/>
+
+###14.表格
+####14.1用`|`来分割单元格,用`-`来分割表头和其他行
+|name|value|
+|----|-----|
+|pro | 15  |
+|mac | 16  |
+####14.2对齐方式用`-:`设置内容和标题栏右对齐,`:-`设置内容和标题左对齐,`:-:`设置内容居中对齐
+|name左对齐|value右对齐| key居中对齐 |
+|:---|----:| :-: |
+|pro | 15  | a   |
+|mac | 16  | b   |
+
+

@@ -187,4 +187,96 @@ b=c;
 |pro | 15  | a   |
 |mac | 16  | b   |
 
+###15.反斜杠转译
+|符号|意义|
+|---|:--|
+|*|星号|
+|\\|反斜杠|
+|`|反引号|
+|_|下划线|
+|{}|花括号|
+|[]|方括号|
+|()|圆括号|
+|#|井号|
+|+|加号|
+|-|减号|
+|.|英文句号|
+|!|英文感叹号|
 
+###16.流程图
+####16.1基本流程图,从左到右,从上到下,每一行字可以描述一个关系
+```mermaid
+graph LR
+a[a]-->|关系连接线上的描述|b[b]
+b-->c(圆角的)
+c-->d{花括号是条件啊}
+d-->|如果满足条件1|e[结果1]
+d-->|如果满足条件2|f(结果2)
+z[其他的框Z]
+y[其他的框Y]
+```
+####16.2标准流程图,*注意冒号后面要有一个以上的空格*
+```flow
+st=>start:  开始框
+op=>operation: 处理框
+cond=>condition: 判断框(是或否?)
+sub1=>subroutine: 子流程
+io=>inputoutput: 输入输出框
+e=>end: 结束框
+st->op->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op
+```
+```flow
+a=>start: start
+b=>operation: operation1
+c=>condition: condition(left or right)
+d=>operation: operation2
+e=>subroutine: sub
+f=>inputoutput: input
+g=>inputoutput: output
+h=>end: end
+a(right)->f(right)->b(right)->c
+c(yes)->g->h
+c(no)->d->e(right)->b
+
+
+```
+####16.3UML时序图,*时序图例子,-> 直线，-->虚线，->>实线箭头*
+```sequence
+前端-->后端: 给点数据
+Note right of 后端: service client
+Note left of 前端: javascript
+后端-->服务A: 我要数据A
+后端-->服务B: 我要数据B
+Note over 服务A,服务B: 一堆微服务
+Note over 服务B,服务C: 一堆微服务
+服务A->后端: 给你数据A
+服务B->后端: 给你数据B
+后端->前端: 呐,你要的数据
+服务C->>前端: 服务C的自我意识觉醒,传数据给前端,箭头不一样呢
+服务C-->>前端: 服务C的自我意识觉醒,传数据给前端,箭头和线都不一样呢
+participant 参与者服务D
+```
+####16.4甘特图*section分块,每一个任务后面是[冒号/crit(关键)/逗号/down状态/逗号/名称变量/逗号/开始时间/逗号/结束时间/after desc2/逗号/几天]*,冒号后面至少跟一项时间,其他的可填可不填
+```mermaid
+%% 语法示例
+        gantt
+        dateFormat  YYYY-MM-DD
+        title 软件开发甘特图
+        section 设计
+        需求                      :done,    des1, 2014-01-06,2014-01-08
+        原型                      :active,  des2, 2014-01-09, 3d
+        UI设计                    :         des3, after des2, 5d
+        未来任务                   :         des4, after des3, 5d
+        section 开发
+        学习准备理解需求            :crit, done,2014-01-06,48h
+        设计框架                   :crit, done, after des2, 2d
+        开发                      :crit, active, 3d
+        未来任务                   :crit, 5d
+        摸鱼                      :crit, 2d
+        section 测试
+        功能测试                   :active, a1, after des3, 3d
+        压力测试                   :after a1  , 20h
+        测试报告                   :48h
+```

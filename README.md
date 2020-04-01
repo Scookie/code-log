@@ -29,7 +29,7 @@
 
 
 ## css world
-* [获取屏幕宽高]（https://github.com/Scookie/code-log/blob/master/%E8%8E%B7%E5%8F%96%E5%B1%8F%E5%B9%95%E5%AE%BD%E9%AB%98.md）
+* [获取屏幕宽高](https://github.com/Scookie/code-log/blob/master/%E8%8E%B7%E5%8F%96%E5%B1%8F%E5%B9%95%E5%AE%BD%E9%AB%98.md)
 
 
 ## git

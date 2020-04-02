@@ -50,3 +50,6 @@
 
 
 ## 其他
+* [学不进去没时间学怎么办-张鑫旭](https://www.zhangxinxu.com/life/?p=987)
+* [写给女朋友的中级前端面试秘籍-晨曦时梦见兮](https://juejin.im/post/5e7af0685188255dcf4a497e)
+* [写给初中级前端的高级进阶指南（JS、TS、Vue、React、性能、学习规划）-晨曦时梦见兮](https://juejin.im/post/5e7c08bde51d455c4c66ddad#heading-3)
